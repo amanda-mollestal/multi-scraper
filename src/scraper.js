@@ -59,7 +59,6 @@ export class Scraper {
     return tagArray
   }
 
-
   scrapeHtmlForTagAttribute = async (html, tag, attribute) => {
 
     const $ = load(html)
@@ -82,5 +81,15 @@ export class Scraper {
       //return elementArray[0]
 
   }
+
+  getAllHrefFromUrl = async (url) => {
+    const html = await this.getHtmlFromUrl(url)
+  
+    const hrefArray = await this.scrapeHtmlForTagAttribute(html, 'a', 'href')
+  
+    return hrefArray
+  
+  }
+  
 
 }

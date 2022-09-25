@@ -26,9 +26,13 @@ console.log(attributeArray)
 
 
 
-
-
 // Get webpage title from URL 
 const pageTitle = await scraper.getPageTitleFromUrl('https://www.reddit.com/r/sweden/')
 
 console.log(pageTitle)
+
+// Get all HREFs from a URL 
+const hrefArray = await scraper.getAllHrefFromUrl('https://www.reddit.com/r/sweden/')
+
+console.log(hrefArray)
+
