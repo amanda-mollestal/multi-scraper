@@ -15,4 +15,18 @@ export class Scraper {
     }
   }
 
+  canUrlBeScraped = async (url) => {
+
+    try {
+      
+      const tryToScrape = await this.getHtmlFromUrl(url)
+
+      return true
+
+    } catch (error) {
+      return false
+    }
+
+  }
+
 }
