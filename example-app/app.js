@@ -13,6 +13,6 @@ const result = await scraper.canUrlBeScraped('https://www.reddit.com/r/sweden/')
 const html = await scraper.getHtmlFromUrl('https://www.reddit.com/r/sweden/')
 
 
+const tags = await scraper.scrapeHtmlForTags(html, 'script')
 
-
-console.log(result)
+console.log(tags)
