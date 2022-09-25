@@ -36,3 +36,6 @@ const hrefArray = await scraper.getAllHrefFromUrl('https://www.reddit.com/r/swed
 
 console.log(hrefArray)
 
+// Turn all relativ to absolute URL in an array
+const arrayWithAbsoluteUrls = await scraper.turnRelativeToAbsoluteUrls('https://www.reddit.com/r/sweden/', hrefArray)
+console.log(arrayWithAbsoluteUrls)

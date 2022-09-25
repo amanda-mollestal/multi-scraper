@@ -111,4 +111,54 @@ export class Scraper {
  
   }
 
+  turnRelativeToAbsoluteUrls = (url, array) => {
+
+    const urlRightFormat = this.#makeUrlRightFormat(url) 
+
+    const baseUrl = this.#getBaseUrl(url)
+
+    
+    // BOKEN SÄGER ATT INTE HA NÄSTLADE STASTER T.EX. IF-SATS I FOR-LOOP
+    
+    const arrayCopy = array.slice()
+
+    for(let i = 0; i < arrayCopy.length; i++) {
+
+      const givenUrl = `${arrayCopy[i]}`
+
+      if(!givenUrl.startsWith('http')) {
+
+        if (givenUrl.startsWith(`/`)) {
+          arrayCopy[i] = baseUrl + givenUrl
+        } else {
+          arrayCopy[i] = urlRightFormat + givenUrl
+        }
+      }
+        
+    }
+
+    return arrayCopy
+
+
+  }
+
+  #makeUrlRightFormat = (url) => {
+
+    if(!url.endsWith('/')) {
+      return url + '/'
+    } else {
+      return url
+    }
+
+   }
+
+   #getBaseUrl = (url) => {
+
+    const partsOfUrl = url.split('/')
+
+    const baseUrl = partsOfUrl[0] + '//' + partsOfUrl[2]
+
+    return baseUrl
+   }
+
 }
