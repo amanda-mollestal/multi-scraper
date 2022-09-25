@@ -7,12 +7,19 @@ const scraper = new Scraper()
 
 const result = await scraper.canUrlBeScraped('https://www.reddit.com/r/sweden/')
 
-
+// result === TRUE
+console.log(result)
 
 // Get HTML from URl
 const html = await scraper.getHtmlFromUrl('https://www.reddit.com/r/sweden/')
 
-
-const tags = await scraper.scrapeHtmlForTags(html, 'script')
+// Scrape HTML and get array of tags 
+const tags = await scraper.scrapeHtmlForTags(html, 'h3')
 
 console.log(tags)
+
+// Get webpage title from URL 
+const pageTitle = await scraper.getPageTitleFromUrl('https://www.reddit.com/r/sweden/')
+
+console.log(pageTitle)
+

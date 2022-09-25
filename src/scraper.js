@@ -59,4 +59,14 @@ export class Scraper {
     return tagArray
   }
 
+  getPageTitleFromUrl = async (url) => {
+    const html = await this.getHtmlFromUrl(url)
+
+    const tagArray = await this.scrapeHtmlForTags(html, 'title')
+
+    return tagArray[0].textContent
+      //return elementArray[0]
+
+  }
+
 }
