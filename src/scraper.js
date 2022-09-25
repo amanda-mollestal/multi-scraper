@@ -59,6 +59,20 @@ export class Scraper {
     return tagArray
   }
 
+
+  scrapeHtmlForTagAttribute = async (html, tag, attribute) => {
+
+    const $ = load(html)
+    const attributeArray = []
+
+    $(`${tag}`).each(function () {
+      attributeArray.push($(this).attr(`${attribute}`))
+    })
+  
+    return attributeArray
+
+  }
+
   getPageTitleFromUrl = async (url) => {
     const html = await this.getHtmlFromUrl(url)
 
