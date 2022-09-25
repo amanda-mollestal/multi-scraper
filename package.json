@@ -1,0 +1,21 @@
+{
+  "name": "multi-scraper",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "scraper.js",
+  "scripts": {
+    "start": "node example-app/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amanda-mollestal/multi-scraper.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amanda-mollestal/multi-scraper/issues"
+  },
+  "homepage": "https://github.com/amanda-mollestal/multi-scraper#readme"
+}
