@@ -86,10 +86,29 @@ export class Scraper {
     const html = await this.getHtmlFromUrl(url)
   
     const hrefArray = await this.scrapeHtmlForTagAttribute(html, 'a', 'href')
+
+    const hrefArrayWithoutUndefined = this.#removeUndefinedFromArray(hrefArray)
   
-    return hrefArray
+    return hrefArrayWithoutUndefined
   
   }
-  
+
+  #removeUndefinedFromArray = (array) => {
+
+    // validate array ?
+    const arrayCopy = array.slice()
+ 
+    for (let i = 0; i < arrayCopy.length; i++) {
+     
+     if(arrayCopy[i] === undefined) {
+       arrayCopy.splice(i, 1);
+       i--
+     }
+ 
+    }
+ 
+    return arrayCopy
+ 
+  }
 
 }
