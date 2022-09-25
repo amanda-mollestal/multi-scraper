@@ -17,5 +17,9 @@
   "bugs": {
     "url": "https://github.com/amanda-mollestal/multi-scraper/issues"
   },
-  "homepage": "https://github.com/amanda-mollestal/multi-scraper#readme"
+  "homepage": "https://github.com/amanda-mollestal/multi-scraper#readme",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "cheerio": "^1.0.0-rc.12"
+  }
 }
