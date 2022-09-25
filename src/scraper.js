@@ -82,14 +82,25 @@ export class Scraper {
 
   }
 
+  getAllImageSources = async (url) => {
+    const html = await this.getHtmlFromUrl(url)
+  
+    const srcArray = await this.scrapeHtmlForTagAttribute(html, 'img', 'src')
+
+    const srcArrayWithoutUndefineds = this.#removeUndefinedFromArray(srcArray)
+
+    return srcArrayWithoutUndefineds
+
+  }
+
   getAllHrefFromUrl = async (url) => {
     const html = await this.getHtmlFromUrl(url)
   
     const hrefArray = await this.scrapeHtmlForTagAttribute(html, 'a', 'href')
 
-    const hrefArrayWithoutUndefined = this.#removeUndefinedFromArray(hrefArray)
+    const hrefArrayWithoutUndefineds = this.#removeUndefinedFromArray(hrefArray)
   
-    return hrefArrayWithoutUndefined
+    return hrefArrayWithoutUndefineds
   
   }
 
