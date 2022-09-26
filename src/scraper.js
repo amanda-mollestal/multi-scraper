@@ -1,3 +1,10 @@
+/**
+ * The scraper module.
+ *
+ * @author Amanda Möllestål <am224pg@student.lnu>
+ * @version 1.0
+ */
+
 import axios from "axios"
 import { load } from "cheerio"
 
@@ -40,19 +47,9 @@ export class Scraper {
       thisTag.name = $(this)[0].name
       thisTag.type = $(this)[0].type
       thisTag.textContent = $(this).text()
-      //thisTag.attributes = $(this)[0].attribs
+  
       thisTag.attributes = JSON.parse(JSON.stringify($(this)[0].attribs))
       
-      //console.log($(this)[0])
-  
-      //const atts =  JSON.parse(JSON.stringify($(this)[0].attribs))
-
-      //console.log(atts)
-
-      //console.log(thisTag)
-      //console.log('--------------------------------------------------------------------------------------------------------------------')
-  
-      //tagArray.push($(this))
       tagArray.push(thisTag)
     })
 
@@ -78,7 +75,6 @@ export class Scraper {
     const tagArray = await this.scrapeHtmlForTags(html, 'title')
 
     return tagArray[0].textContent
-      //return elementArray[0]
 
   }
 
@@ -127,10 +123,7 @@ export class Scraper {
 
     const urlRightFormat = this.#makeUrlRightFormat(url) 
 
-    const baseUrl = this.#getBaseUrl(url)
-
-    
-    // BOKEN SÄGER ATT INTE HA NÄSTLADE STASTER T.EX. IF-SATS I FOR-LOOP
+    const baseUrl = this.#getBaseUrl(urlRightFormat)
     
     const arrayCopy = array.slice()
 
