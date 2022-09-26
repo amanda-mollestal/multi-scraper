@@ -10,6 +10,12 @@ import { load } from "cheerio"
 
 export class Scraper {
 
+  /**
+   * Takes an URL, scrapes and returns the HTML code.
+   * 
+   * @param {String} url - the given URL
+   * @returns {String} - The scraped HTML 
+   */
   getHtmlFromUrl = async (url) => {
     try {
       const { data } = await axios.get(
@@ -22,12 +28,17 @@ export class Scraper {
     }
   }
 
+  /**
+   * Takes an URL and checks if URL can be scraped.
+   * 
+   * @param {String} url - the given URL
+   * @returns {Boolean} - If URL can be scraped
+   */
   canUrlBeScraped = async (url) => {
 
     try {
       
       const tryToScrape = await this.getHtmlFromUrl(url)
-
       return true
 
     } catch (error) {
@@ -36,6 +47,14 @@ export class Scraper {
 
   }
 
+  /**
+   * Takes HTML and a tag-name to search for.
+   * Returns array with tag-objects.
+   * 
+   * @param {String} html - HTML code to scrape 
+   * @param {String} tag - Tag to search for
+   * @returns {Array.<Object>} - Array with tag-objects
+   */
   scrapeHtmlForTags = async (html, tag) => {
     const $ = load(html)
     const tagArray = []
@@ -56,6 +75,15 @@ export class Scraper {
     return tagArray
   }
 
+  /**
+   * Takes HTML, a tag-name and an attribute to search for.
+   * Returns array with attribute-values. 
+   *
+   * @param {String} html - HTML code to scrape 
+   * @param {String} tag - Tag to search for
+   * @param {String} attribute - The attribute to search for
+   * @returns {Array.<String>} - Array with attribute values
+   */
   scrapeHtmlForTagAttribute = async (html, tag, attribute) => {
 
     const $ = load(html)
@@ -69,6 +97,12 @@ export class Scraper {
 
   }
 
+  /**
+   * Takes an URL, scrapes and return page title.
+   * 
+   * @param {String} url - The given URL
+   * @returns {String} - The page title
+   */
   getPageTitleFromUrl = async (url) => {
     const html = await this.getHtmlFromUrl(url)
 
@@ -78,6 +112,12 @@ export class Scraper {
 
   }
 
+  /**
+   * Takes an URL, scrapes and returns all img sources.
+   * 
+   * @param {String} url - The given URL
+   * @returns {Array.<String>} - Array with img sources
+   */
   getAllImageSources = async (url) => {
     const html = await this.getHtmlFromUrl(url)
   
@@ -89,6 +129,12 @@ export class Scraper {
 
   }
 
+  /**
+   * Takes an URL, scrapes and returns all a-tags HREFs.
+   * 
+   * @param {String} url - The given URL
+   * @returns {Array.<String>} - Array with HREFs
+   */
   getAllHrefFromUrl = async (url) => {
     const html = await this.getHtmlFromUrl(url)
   
@@ -117,6 +163,13 @@ export class Scraper {
  
   }
 
+  /**
+   * Takes an absolute URL and array with URLs and turns every relative to absolute URL.
+   * 
+   * @param {String} url - The given URL
+   * @param {Array.<String>} - Array with URLs
+   * @returns {Array.<String>} - Array with all absolute URLs
+   */
   turnRelativeToAbsoluteUrls = (url, array) => {
 
     this.#validateArray(array)
