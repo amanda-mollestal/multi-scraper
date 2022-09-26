@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "type": "module",
-  "main": "scraper.js",
+  "main": "src/scraper.js",
   "scripts": {
     "start": "node example-app/app.js",
     "test": "node src/tests.js"
