@@ -106,7 +106,6 @@ export class Scraper {
 
   #removeUndefinedFromArray = (array) => {
 
-    // validate array ?
     const arrayCopy = array.slice()
  
     for (let i = 0; i < arrayCopy.length; i++) {
@@ -123,6 +122,8 @@ export class Scraper {
   }
 
   turnRelativeToAbsoluteUrls = (url, array) => {
+
+    this.#validateArray(array)
 
     const urlRightFormat = this.#makeUrlRightFormat(url) 
 
@@ -150,6 +151,14 @@ export class Scraper {
 
     return arrayCopy
 
+
+  }
+
+  #validateArray = (array) => {
+
+    if(!Array.isArray(array)){
+      throw new Error('The given array is not a valid array, try another one.')
+    }
 
   }
 

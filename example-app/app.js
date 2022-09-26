@@ -31,15 +31,16 @@ const pageTitle = await scraper.getPageTitleFromUrl('https://www.imdb.com/title/
 
 console.log(pageTitle)
 
-// Get all image sources from URL 
+// Get array with all image sources from URL 
 const srcArray = await scraper.getAllImageSources('https://www.imdb.com/title/tt0076759/?ref_=fn_al_tt_1')
 console.log(srcArray)
 
 
-// Get all HREFs from a URL 
+// Get array with all HREFs from a URL 
 const hrefArray = await scraper.getAllHrefFromUrl('https://www.imdb.com/title/tt0076759/?ref_=fn_al_tt_1')
 
 console.log(hrefArray)
+
 
 // Turn all relativ to absolute URL in an array
 const arrayWithAbsoluteUrls = await scraper.turnRelativeToAbsoluteUrls('https://www.imdb.com/title/tt0076759/?ref_=fn_al_tt_1', hrefArray)
