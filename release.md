@@ -86,5 +86,9 @@ FÖRLÅT FÖR HUR KODEN SER UT. Jag gjorde tabeller i andra filer för jag visst
 Reflektera över uppgiften utifrån ett kodkvalitetsperspektiv. Använd begrepp ifrån boken. 
 
 **Det har definitivt varit en annorlunda upplevelse med denna uppgift i jämförelse med de tidigare uppgifter jag har haft i andra kurser. Jag vill inte påstå att uppgiften i sig har varit svårare eller mer komplicerad än i de andra kurserna, men utgångspunkten har varit annorlunda och tidigare arbetssätt ifrågasätts.** 
+
+
 **I tidigare kurser har fokuset legat på att göra rätt i den mån att man ska göra som man blir tillsagd och följa en standard. Jag ser mig själv som duktig på att följa instruktioner och leverera. I denna kurs har jag nu i stället fått möjligheter att börja undersöka och fråga: men vad är ”rätt” då? Rätt är inte längre hugget i sten. Min tidigare definition av Clean Code var coola one-liners och generellt så lite kod som möjligt i en fil. Nu ekar readability och understandability i huvudet. Jag ser hellre någon extra rad som ökar läsbarheten eller utbruten kod i bra namngivna funktioner som ökar förståelsen.** 
+
+
 **Nu ändrades också mottagaren av min kod från endast lärare till en rad möjliga olika mottagare. Inte bara eftersom vi i workshops nu kodar med varandra utan också för att detta är första gången jag faktiskt har publicerat något publikt på GitHub. Jag kan inte längre anta att personen som läser min kod förstår bakgrunden till projektet eller sitter på en viss kompetens. Detta är något jag märkt att jag tänkt extra på under både utvecklingen samt dokumentationen av projektet.**
