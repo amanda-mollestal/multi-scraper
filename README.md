@@ -45,7 +45,7 @@ returns --> FALSE
 ```
 scraper.getPageTitleFromUrl('https://www.imdb.com/title/tt0076759/?ref_=fn_al_tt_1')
 
-returns --> "Stjärnornas krig (1977) - IMDb
+returns --> "Stjärnornas krig (1977) - IMDb"
 "
 ```
 ### - Get an array with all the image sources scraped from URL

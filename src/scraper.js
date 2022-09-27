@@ -18,10 +18,7 @@ export class Scraper {
    */
   getHtmlFromUrl = async (url) => {
     try {
-      const { data } = await axios.get(
-      `${url}`
-     )
-  
+      const { data } = await axios.get(`${url}`)
       return data
     } catch (error) {
       throw new Error('The given URL could not be scraped by this scraper, try another one.')
@@ -61,13 +58,12 @@ export class Scraper {
      
     $(`${tag}`).each(function () {
 
-      const thisTag = {}
-  
-      thisTag.name = $(this)[0].name
-      thisTag.type = $(this)[0].type
-      thisTag.textContent = $(this).text()
-  
-      thisTag.attributes = JSON.parse(JSON.stringify($(this)[0].attribs))
+      const thisTag = {
+        name: $(this)[0].name,
+        type: $(this)[0].type,
+        textContent: $(this).text(),
+        attributes: JSON.parse(JSON.stringify($(this)[0].attribs)),
+      }
       
       tagArray.push(thisTag)
     })
@@ -143,7 +139,6 @@ export class Scraper {
     const hrefArrayWithoutUndefineds = this.#removeUndefinedFromArray(hrefArray)
   
     return hrefArrayWithoutUndefineds
-  
   }
 
   #removeUndefinedFromArray = (array) => {
@@ -196,7 +191,6 @@ export class Scraper {
     }
 
     return arrayCopy
-
 
   }
 

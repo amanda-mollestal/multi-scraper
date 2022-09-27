@@ -37,4 +37,3 @@ const hrefArray = await scraper.getAllHrefFromUrl('https://www.imdb.com/title/tt
 
 // Turn all relativ to absolute URL in an array
 const arrayWithAbsoluteUrls = scraper.turnRelativeToAbsoluteUrls('https://www.imdb.com/title/tt0076759/?ref_=fn_al_tt_1', hrefArray)
-console.log(arrayWithAbsoluteUrls)
