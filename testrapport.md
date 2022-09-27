@@ -12,7 +12,7 @@
 | getAllHrefFromUrl          | testGetAllHrefFromUrl          | Passed        |
 | turnRelativeToAbsoluteUrls | testTurnRelativeToAbsoluteUrls | Passed        |
 
- I have created a tests.js file that acts as a test application for this module. It contains 8 tests that each test 1 of the 8 public methods. 
+I have created a tests.js file that acts as a test application for this module. It contains 8 tests that each test 1 of the 8 public methods. 
 
 A test itelf is a method that calls the method it's testing and checks if the response is as expected. The results will log as either 'passed' or 'failed' in your console.
 
