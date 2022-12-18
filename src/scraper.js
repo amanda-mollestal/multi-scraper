@@ -21,7 +21,7 @@ export class Scraper {
       const { data } = await axios.get(`${url}`)
       return data
     } catch (error) {
-      throw new Error('The given URL could not be scraped by this scraper, try another one.')
+      throw new CouldNotScrapeError(`Could not scrape ${url}`)
     }
   }
 
@@ -197,7 +197,7 @@ export class Scraper {
   #validateArray = (array) => {
 
     if(!Array.isArray(array)){
-      throw new Error('The given array is not a valid array, try another one.')
+      throw new ValidationError()
     }
 
   }
@@ -221,4 +221,20 @@ export class Scraper {
     return baseUrl
    }
 
+}
+
+
+class CouldNotScrapeError extends Error {
+  constructor(message = 'The given URL could not be scraped by this scraper, try another one.') {
+    super(message)
+    this.name = 'CouldNotScrapeError'
+  }
+}
+
+
+class ValidationError extends Error {
+  constructor(message = 'The given array is not valid, try another one.') {
+    super(message)
+    this.name = 'ValidationError'
+  }
 }
